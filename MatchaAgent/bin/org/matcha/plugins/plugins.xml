@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- plugin配置文件，其中如果matcha.xml中配置了des和cron的话会覆盖此处的  -->
+<content>
+	<leaf name="cpu" des="用来抓取cpu的各种基础数据" clazz="org.matcha.plugins.impl.CPU" cron="0/60 * * * * ?" />
+</content>

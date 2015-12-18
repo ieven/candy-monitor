@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- agent配置文件  -->
+<content>
+	<host>
+		<leaf name="172.20.35.88" des="这是李崇的测试主机" targetIp="http://localhost:8080" />
+	</host>
+	<plugin>
+		<leaf name="cpu" des="用来抓取cpu的各种基础数据" cron="0/6 * * * * ?" />
+	</plugin>
+</content>
