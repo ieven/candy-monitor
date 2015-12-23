@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- server配置文件 -->
+<content>
+	<server>
+		<!-- 监听端口,ip地址，backlog -->
+		<leaf port="8888" ipAdderss="" backlog="" />
+	</server>
+	<db>
+		<!-- 数据库配置部分begin -->
+
+		<!-- 选用的数据库类型，如：mongodb,mysql,oracle -->
+		<leaf key="dbType" value="mongodb" />
+		<!-- mongodb地址，多个可用","隔开 -->
+		<leaf key="mongoUrl" value="172.20.1.95" />
+		<!-- mongodb端口,多个可用","隔开 -->
+		<leaf key="mongoPort" value="27017" />
+		<!-- mongodb数据库名称 -->
+		<leaf key="mongoDbName" value="yuxin_graphite" />
+		<!-- mongodb数据库用户名，可为空 -->
+		<leaf key="userName" value="" />
+		<!-- mongodb数据库密码，可为空 -->
+		<leaf key="password" value="" />
+		<!-- mongodb数据库每台主机最大连接数，空则为20 -->
+		<leaf key="connectionsPerHost" value="" />
+		<!-- mongodb数据库线程队列数，空则为10 -->
+		<leaf key="threadsAllowedToBlockForConnectionMultiplier" value="" />
+		<!-- mongodb数据库是否需要身份验证，默认为false -->
+		<leaf key="authentication" value="" />
+
+		<!-- 数据库配置部分end -->
+	</db>
+</content>

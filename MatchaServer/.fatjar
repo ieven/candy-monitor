@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Dec 23 14:08:29 CST 2015
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=MatchaServer.jar
+manifest.mergeall=true
+manifest.mainclass=org.matcha.server.StartUp
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

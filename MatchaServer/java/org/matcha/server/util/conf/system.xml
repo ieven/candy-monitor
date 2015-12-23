@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统配置文件  -->
+<content>
+	<version>V1.0.0</version>
+	<threadpool>
+		<!-- 线程池内线程数量,此处由于java socket为阻塞io故此处暂时无用 -->
+		<leaf num="1"/>
+	</threadpool>
+	<!-- 定时缓存任务 -->
+	<schedule>
+		<!-- 开关 -->
+		<switch>on</switch>
+		<!-- 设定多长时间将收集到的数据转存入数据库 -->
+		<cron>0/60 * * * * ?</cron>
+	</schedule>
+</content>
