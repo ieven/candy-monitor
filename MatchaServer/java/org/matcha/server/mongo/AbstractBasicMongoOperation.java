@@ -86,8 +86,8 @@ public abstract class AbstractBasicMongoOperation implements BasicDBOperationDao
 		// TODO Auto-generated method stub
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("target", ((MongoBean)object).getTarget());
-		map.put("data",((MongoBean)object).getValue());
-		map.put("timeStamp", ((MongoBean)object).getTimestamp());
+		map.put("value",((MongoBean)object).getValue());
+		map.put("timestamp", ((MongoBean)object).getTimestamp());
 		return new BasicDBObject(map);
 	}
 	
@@ -101,7 +101,7 @@ public abstract class AbstractBasicMongoOperation implements BasicDBOperationDao
 	 * 获取指定的数据库集合，仅限内部使用
 	 * @return
 	 */
-	private DBCollection getDBCollection()
+	protected DBCollection getDBCollection()
 	{
 		String tableName = setTableName();
 		if(tableName==null||tableName.equals(""))

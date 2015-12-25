@@ -7,5 +7,17 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<!-- 左侧菜单begin -->
+	<servlet>
+		<servlet-name>menu</servlet-name>
+		<servlet-class>org.matcha.server.web.servlet.MenuServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>menu</servlet-name>
+		<url-pattern>/menu</url-pattern>
+	</servlet-mapping>
+	<!-- 左侧菜单end -->
+	
 </web-app>

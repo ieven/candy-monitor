@@ -15,5 +15,11 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mongodb/mongo-2.7.3.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/quartz/c3p0-0.9.1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/quartz/ieven_quartz.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json/commons-lang-2.6.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

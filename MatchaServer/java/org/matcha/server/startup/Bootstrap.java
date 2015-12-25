@@ -69,16 +69,6 @@ public class Bootstrap {
 		}
 		//初始化数据库信息
 		initDBConfig();
-		//启动任务调度
-		String offOrOn = (String) ConfigProxy.getSystemConfigMap().get(SCHEDULE_SWITCH);
-		if(offOrOn.equalsIgnoreCase("on"))
-		{
-			scheduler();
-		}
-		else if(offOrOn.equalsIgnoreCase("off"))
-		{
-			//不做任何操作
-		}
 		long t2 = System.nanoTime();
 		logger.info("Initialization config in "+((t2 - t1) / 1000000) + " ms");
 	}
@@ -115,6 +105,16 @@ public class Bootstrap {
 	public void start()
 	{
 		long t1 = System.nanoTime();
+		//启动任务调度
+		String offOrOn = (String) ConfigProxy.getSystemConfigMap().get(SCHEDULE_SWITCH);
+		if(offOrOn.equalsIgnoreCase("on"))
+		{
+			scheduler();
+		}
+		else if(offOrOn.equalsIgnoreCase("off"))
+		{
+			//不做任何操作
+		}
 		//启动监听
 		ServerSocketListener listener = new ServerSocketListener();
 		listener.start();

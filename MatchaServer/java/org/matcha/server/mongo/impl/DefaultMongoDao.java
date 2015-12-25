@@ -1,7 +1,14 @@
 package org.matcha.server.mongo.impl;
 
-import org.matcha.server.mongo.AbstractBasicMongoOperation;
+import java.util.List;
+import java.util.regex.Pattern;
 
+import org.matcha.server.mongo.AbstractBasicMongoOperation;
+import org.matcha.server.po.MongoObjectBean;
+
+import com.mongodb.BasicDBList;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 
@@ -37,4 +44,22 @@ public  class DefaultMongoDao extends AbstractBasicMongoOperation{
 		
 	}
 
+	public void findData(String target,String beginTime,String endTime)
+	{
+		Pattern pattern = Pattern.compile(target);
+		DBObject query = MongoObjectBean.object("target", pattern);
+		
+		BasicDBList basicDBList = new BasicDBList();
+		basicDBList.add(MongoObjectBean.object("timeStamp", MongoObjectBean.object("$gte", beginTime)));
+		basicDBList.add(MongoObjectBean.object("timeStamp", MongoObjectBean.object("$lte", endTime)));
+		query.put("$and", basicDBList);
+		
+		DBCursor dbc = getDBCollection().find(query);
+		while(dbc.hasNext())
+        {
+        	DBObject dbObject = dbc.next();
+        	System.out.println(dbObject.get("target")+"------"+dbObject.get("timeStamp"));
+        }
+	}
+	
 }
