@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<link rel="shortcut icon" href="./resource/logo.png">
+<link href="./resource/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="./resource/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="./resource/css/coming-soon.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
+
+<link rel="stylesheet" type="text/css" href="./resource/css/style.min.css">
+
+<style type="text/css">
+	.container
+	{
+		width:98%;
+	}
+</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 tree-demo">
+			<div id="tree_module"></div>
+		</div>
+	</div>
+</div>
+
+<script src="./resource/js/jquery.min.js" type="text/javascript"></script>
+<script src="./resource/js/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="./resource/js/page_coming_sonn.js" type="text/javascript"></script>
+<script src="./resource/js/tree-module-1.0.js" type="text/javascript"></script>
+<script src="./resource/js/jstree.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL PLUGINS -->
+<script>
+jQuery(document).ready(function() {     
+  // init background slide images
+    $.backstretch([
+            "./resource/img/1.jpg",
+            "./resource/img/3.jpg",
+			"./resource/img/4.jpg"
+        ], {
+        fade: 1000,
+        duration: 10000
+   });
+});
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

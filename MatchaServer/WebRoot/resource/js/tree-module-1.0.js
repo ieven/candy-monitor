@@ -10,37 +10,44 @@ var TreeModule = function () {
 	}
 
 	var _request_data = function (container, args ,url) {
-		
-		json = {"data":[{"children":[{"children":[{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"nice"},{"children":[],"mod_id":"","parent_id":"","text":"interrupt"},{"children":[],"mod_id":"","parent_id":"","text":"softirq"},{"children":[],"mod_id":"","parent_id":"","text":"steal"},{"children":[],"mod_id":"","parent_id":"","text":"user"},{"children":[],"mod_id":"","parent_id":"","text":"system"},{"children":[],"mod_id":"","parent_id":"","text":"idle"},{"children":[],"mod_id":"","parent_id":"","text":"wait"}],"mod_id":"","parent_id":"","text":"cpu"}],"mod_id":"","parent_id":"","text":"0"}],"mod_id":"","parent_id":"","text":"cpu"},{"children":[{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_packets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_errors"}],"mod_id":"","parent_id":"","text":"lo"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_packets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"rx"},{"children":[],"mod_id":"","parent_id":"","text":"tx"}],"mod_id":"","parent_id":"","text":"if_errors"}],"mod_id":"","parent_id":"","text":"eth0"}],"mod_id":"","parent_id":"","text":"interface"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"shortterm"},{"children":[],"mod_id":"","parent_id":"","text":"midterm"},{"children":[],"mod_id":"","parent_id":"","text":"longterm"}],"mod_id":"","parent_id":"","text":"load"}],"mod_id":"","parent_id":"","text":"load"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"used"},{"children":[],"mod_id":"","parent_id":"","text":"buffered"},{"children":[],"mod_id":"","parent_id":"","text":"cached"},{"children":[],"mod_id":"","parent_id":"","text":"free"}],"mod_id":"","parent_id":"","text":"memory"}],"mod_id":"","parent_id":"","text":"memory"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"used"},{"children":[],"mod_id":"","parent_id":"","text":"free"},{"children":[],"mod_id":"","parent_id":"","text":"cached"}],"mod_id":"","parent_id":"","text":"swap"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"in"},{"children":[],"mod_id":"","parent_id":"","text":"out"}],"mod_id":"","parent_id":"","text":"swap_io"}],"mod_id":"","parent_id":"","text":"swap"},{"children":[{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"free"},{"children":[],"mod_id":"","parent_id":"","text":"reserved"},{"children":[],"mod_id":"","parent_id":"","text":"used"}],"mod_id":"","parent_id":"","text":"df_complex"}],"mod_id":"","parent_id":"","text":"mapper_VolGroup-lv_root"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"free"},{"children":[],"mod_id":"","parent_id":"","text":"reserved"},{"children":[],"mod_id":"","parent_id":"","text":"used"}],"mod_id":"","parent_id":"","text":"df_complex"}],"mod_id":"","parent_id":"","text":"sda1"}],"mod_id":"","parent_id":"","text":"df"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"running"},{"children":[],"mod_id":"","parent_id":"","text":"sleeping"},{"children":[],"mod_id":"","parent_id":"","text":"zombies"},{"children":[],"mod_id":"","parent_id":"","text":"stopped"},{"children":[],"mod_id":"","parent_id":"","text":"paging"},{"children":[],"mod_id":"","parent_id":"","text":"blocked"}],"mod_id":"","parent_id":"","text":"ps_state"},{"children":[],"mod_id":"","parent_id":"","text":"fork_rate"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"ps_vm"},{"children":[],"mod_id":"","parent_id":"","text":"ps_rss"},{"children":[],"mod_id":"","parent_id":"","text":"ps_data"},{"children":[],"mod_id":"","parent_id":"","text":"ps_code"},{"children":[],"mod_id":"","parent_id":"","text":"ps_stacksize"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"user"},{"children":[],"mod_id":"","parent_id":"","text":"syst"}],"mod_id":"","parent_id":"","text":"ps_cputime"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"processes"},{"children":[],"mod_id":"","parent_id":"","text":"threads"}],"mod_id":"","parent_id":"","text":"ps_count"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"minflt"},{"children":[],"mod_id":"","parent_id":"","text":"majflt"}],"mod_id":"","parent_id":"","text":"ps_pagefaults"}],"mod_id":"","parent_id":"","text":"httpd"}],"mod_id":"","parent_id":"","text":"processes"},{"children":[{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_ops"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_time"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_merged"}],"mod_id":"","parent_id":"","text":"sda"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_ops"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_time"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_merged"}],"mod_id":"","parent_id":"","text":"sda1"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_ops"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_time"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_merged"}],"mod_id":"","parent_id":"","text":"sda2"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_ops"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_time"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_merged"}],"mod_id":"","parent_id":"","text":"dm-0"},{"children":[{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_octets"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_ops"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_time"},{"children":[{"children":[],"mod_id":"","parent_id":"","text":"read"},{"children":[],"mod_id":"","parent_id":"","text":"write"}],"mod_id":"","parent_id":"","text":"disk_merged"}],"mod_id":"","parent_id":"","text":"dm-1"}],"mod_id":"","parent_id":"","text":"disk"}],"mod_id":"","parent_id":"","text":"172_20_1_96"}],"message":"","status":"1"};
-		if (0==json['status']) return 0;
+		$.ajax({
+			url : "menu", //要访问的后台地址
+			type : "POST", //使用post方法访问后台
+			data : "", //要发送的数据
+			dataType : 'JSON',//here
+			success : function(data) {
+				var json = data[0];
+				if (0==json['status']) return 0;
 
-		var bodytree = $('#'+container).parent();
-		bodytree.empty();
+				var bodytree = $('#'+container).parent();
+				bodytree.empty();
 
-		var datatree = $('<div />');
-		datatree.attr('id', container);
-		datatree.addClass('tree-demo');
-		bodytree.append(datatree);
+				var datatree = $('<div />');
+				datatree.attr('id', container);
+				datatree.addClass('tree-demo');
+				bodytree.append(datatree);
 
-		datatree.jstree({
-			"core" : {
-				"themes" : {
-					"responsive": false
-				},
-				'data':json['data'],
-				 "check_callback" : true
-			},
-			"types" : {
-				"default" : {
-					"icon" : "fa fa-folder icon-state-warning icon-lg"
-				},
-				"file" : {
-					"icon" : "fa fa-file icon-state-warning icon-lg"
-				}
-			},
-			'plugins': [ "checkbox", "types"],
-			'checkbox':{
-				"keep_selected_style" : false
+				datatree.jstree({
+					"core" : {
+						"themes" : {
+							"responsive": false
+						},
+						'data':json['data'],
+						 "check_callback" : true
+					},
+					"types" : {
+						"default" : {
+							"icon" : "fa fa-folder icon-state-warning icon-lg"
+						},
+						"file" : {
+							"icon" : "fa fa-file icon-state-warning icon-lg"
+						}
+					},
+					'plugins': [ "checkbox", "types"],
+					'checkbox':{
+						"keep_selected_style" : false
+					}
+				});
 			}
 		});
 	};

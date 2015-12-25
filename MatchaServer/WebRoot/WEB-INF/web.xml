@@ -5,9 +5,9 @@
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 	<display-name></display-name>
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>resource/web.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- 左侧菜单begin -->
 	<servlet>
 		<servlet-name>menu</servlet-name>
@@ -19,5 +19,17 @@
 		<url-pattern>/menu</url-pattern>
 	</servlet-mapping>
 	<!-- 左侧菜单end -->
-	
+
+	<!-- MatchaServer 监听守护进程begin -->
+	<servlet>
+		<servlet-name>collectDaemon</servlet-name>
+		<servlet-class>org.matcha.server.web.servlet.CollectDaemonServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>collectDaemon</servlet-name>
+		<url-pattern>/collectDaemon</url-pattern>
+	</servlet-mapping>
+	<!-- MatchaServer 监听守护进程end -->
 </web-app>
