@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.matcha.server.web.menu.base.MenuItemBase;
 
+import com.mongodb.util.Hash;
+
 /**
  * 组装菜单
  * 
@@ -130,39 +132,46 @@ public class MenuAssemble {
 
 	private List<MenuItemBase> assembleMenuData()
 	{
+		//创建一个map用来管理第一层目录
+		Map<String, MenuItemBase> tempMap = new HashMap<>();
 		//需要返回的结果
 		List<MenuItemBase> result = new ArrayList<>();
 		int num = 0;
 		for (MenuItemBase item : this.menuItems) {
 			String target = item.getText();
 			String[] targetArray = target.split("\\.");
-			if(result.size()==0)
+			if(tempMap.isEmpty())
 			{
 				MenuItemBase itemBaseInner = new MenuItemBase();
 				itemBaseInner.setText(targetArray[0]);
-				handleMenuItem(itemBaseInner, 1, targetArray, targetArray[1]);
-				result.add(itemBaseInner);
+				handleMenuItem(itemBaseInner, 1, targetArray, targetArray[1],target);
+				tempMap.put(targetArray[0], itemBaseInner);
 			}
 			else
 			{
-				if(targetArray[0].equals(result.get(num).getText()))
+				if(tempMap.containsKey(targetArray[0]))
 				{
-					handleMenuItem(result.get(num), 1, targetArray, targetArray[1]);
+					handleMenuItem(tempMap.get(targetArray[0]), 1, targetArray, targetArray[1],target);
 				}
 				else
 				{
 					MenuItemBase itemBaseInner = new MenuItemBase();
 					itemBaseInner.setText(targetArray[0]);
-					handleMenuItem(itemBaseInner, 1, targetArray, targetArray[1]);
-					result.add(itemBaseInner);
+					handleMenuItem(itemBaseInner, 1, targetArray, targetArray[1],target);
+					tempMap.put(targetArray[0], itemBaseInner);
 					num++;
 				}
 			}
 		}
+		//将map中的值丢给list
+		for(Map.Entry temp: tempMap.entrySet())
+		{
+			result.add((MenuItemBase) temp.getValue());
+		}
 		return result;
 	}
 	
-	public void handleMenuItem(MenuItemBase itemBase,int i,String[] targetArray,String currentStr)
+	public void handleMenuItem(MenuItemBase itemBase,int i,String[] targetArray,String currentStr,String target)
 	{
 		boolean match = false;
 		for(int j=0;j<itemBase.getChildren().size();j++)
@@ -170,19 +179,10 @@ public class MenuAssemble {
 			if(itemBase.getChildren().get(j).getText().equals(currentStr))
 			{
 				match = true;
-				handleMenuItem(itemBase.getChildren().get(j), i+1, targetArray, targetArray[i+1]);
+				handleMenuItem(itemBase.getChildren().get(j), i+1, targetArray, targetArray[i+1],target);
 				break;
 			}
 		}
-//		for(MenuItemBase itemBaseInner : itemBase.getChildren())
-//		{
-//			if(itemBaseInner.getText().equals(currentStr))
-//			{
-//				match = true;
-//				handleMenuItem(itemBaseInner, i, targetArray, targetArray[i+1]);
-//				break;
-//			}
-//		}
 		if(!match)
 		{
 			MenuItemBase itemBaseInner = new MenuItemBase();
@@ -190,11 +190,11 @@ public class MenuAssemble {
 			itemBase.getChildren().add(itemBaseInner);
 			if(i==targetArray.length-1)
 			{
-				
+				itemBaseInner.setData(target);
 			}
 			else
 			{
-				handleMenuItem(itemBaseInner, i+1, targetArray, targetArray[i+1]);
+				handleMenuItem(itemBaseInner, i+1, targetArray, targetArray[i+1],target);
 			}
 		}
 	}

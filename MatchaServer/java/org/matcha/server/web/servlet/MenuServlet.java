@@ -26,10 +26,8 @@ public class MenuServlet extends HttpServlet{
 
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+	public void init() throws ServletException {
 		// TODO Auto-generated method stub
-		String encoding = "utf-8";
 		Bootstrap bootstrap = new Bootstrap();
 		try {
 			bootstrap.init();
@@ -38,6 +36,13 @@ public class MenuServlet extends HttpServlet{
 			e.printStackTrace();
 			return;
 		}
+	}
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String encoding = "utf-8";
 		MenuService service = new MenuService();
 		JSONArray array = JSONArray.fromObject(service.menuList());
 		PrintWriter pw;

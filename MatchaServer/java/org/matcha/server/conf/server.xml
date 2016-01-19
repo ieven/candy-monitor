@@ -15,7 +15,7 @@
 		<!-- mongodb端口,多个可用","隔开 -->
 		<leaf key="mongoPort" value="27017" />
 		<!-- mongodb数据库名称 -->
-		<leaf key="mongoDbName" value="yuxin_graphite" />
+		<leaf key="mongoDbName" value="yuxin_graphite_test" />
 		<!-- mongodb数据库用户名，可为空 -->
 		<leaf key="userName" value="" />
 		<!-- mongodb数据库密码，可为空 -->

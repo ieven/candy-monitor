@@ -11,6 +11,6 @@
 		<!-- 开关 -->
 		<switch>on</switch>
 		<!-- 设定多长时间将收集到的数据转存入数据库 -->
-		<cron>0/6 * * * * ?</cron>
+		<cron>0/60 * * * * ?</cron>
 	</schedule>
 </content>

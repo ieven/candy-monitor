@@ -27,26 +27,19 @@ var TreeModule = function () {
 				datatree.addClass('tree-demo');
 				bodytree.append(datatree);
 
-				datatree.jstree({
+				datatree.on('changed.jstree', function (e, data) {
+					//此处添加点击出图表事件
+					charts.lineCharts(data.instance.get_node(data.selected[0]).data);
+				  }).jstree({
 					"core" : {
-						"themes" : {
-							"responsive": false
-						},
-						'data':json['data'],
-						 "check_callback" : true
+						'data':json['data']
 					},
 					"types" : {
-						"default" : {
-							"icon" : "fa fa-folder icon-state-warning icon-lg"
-						},
-						"file" : {
-							"icon" : "fa fa-file icon-state-warning icon-lg"
-						}
-					},
-					'plugins': [ "checkbox", "types"],
-					'checkbox':{
-						"keep_selected_style" : false
-					}
+					    "root" : {
+					      "icon" : "fa fa-file icon-state-warning icon-lg"
+					    }
+					  },
+					  "plugins" : [ "types","sort" ]
 				});
 			}
 		});

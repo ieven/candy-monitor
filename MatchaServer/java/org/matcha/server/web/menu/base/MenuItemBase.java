@@ -22,6 +22,14 @@ public class MenuItemBase {
 	 * 菜单显示
 	 */
 	protected String text;
+	protected String data;
+	
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
 	/**
 	 * 子节点
 	 */

@@ -37,7 +37,7 @@ public class TargetUtil {
 			String[] time = timeRange.split("minutes");
 			int min = Integer.parseInt(time[0].substring(1, time[0].length()));
 			long currentTime = Long.parseLong(TimestampOpration.DateToTimestamp(date));
-			return (currentTime-(min*1000*60))+"";
+			return (currentTime-(min*60))+"";
 		}
 	}
 }
