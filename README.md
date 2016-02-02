@@ -8,4 +8,4 @@ server用来处理接受到的数据（目前server已经初步完成web界面�
 ![](https://github.com/ieven/candy-monitor/blob/master/render.png)
 虽然实现了render插件，但用户可根据自己情况选择使用或者直接读取mongodb
 candy-monitor采用mongo存储数据且可根据具体情况更换，提供灵活接口，方便进行二次开发。
-eclipse项目，配置简单，startUp为启动入口。
+MyEclipse项目，配置简单，startUp为启动入口。
